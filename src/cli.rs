@@ -28,23 +28,28 @@ pub fn cli_system() {
     }
     command.remove(0);
 
-    if option.len() > 0 {
-        match option.get(0) {
-            Some(opt) => match opt.as_str() {
-                "-h" | "--help" => help(),
-                "-v" | "--version" => println!("v{}", VERSION),
-                _ => (),
-            },
-            None => (),
+    if let Some(opt) = option.get(0) {
+        match opt.as_str() {
+            "-h" | "--help" => {
+                help();
+                return;
+            }
+            "-v" | "--version" => {
+                println!("v{}", VERSION);
+                return;
+            }
+            _ => (),
         }
     }
-
-    if command.len() > 0 {
-        match command[0].as_str() {
+    if let Some(cmd) = command.get(0) {
+        match cmd.as_str() {
             "vi" => {
                 vi_cli(&command, &option, &value);
             }
             _ => println!("command not found"),
         }
+    }
+    if command.len() == 0 && option.len() == 0 {
+        help();
     }
 }

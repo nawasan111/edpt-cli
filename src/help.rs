@@ -6,7 +6,6 @@ pub fn help() {
 EDPT - command line program to encript or decript message
 
 Usage:
-
     edpt [mode] [action] <option> [inpu]
 
 Mode:

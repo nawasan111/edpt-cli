@@ -38,6 +38,12 @@ pub fn vi_cli(command: &Vec<String>, _: &Vec<String>, value: &HashMap<&str, Stri
         Some(v) => v.trim().to_lowercase(),
         None => panic!("Not found action command"),
     };
+
+    if action == "table" {
+        table();
+        return;
+    }
+
     let message = match command.get(2) {
         Some(v) => v.trim().to_uppercase(),
         None => panic!("Not found message for action"),

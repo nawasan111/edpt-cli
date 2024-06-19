@@ -1,7 +1,7 @@
 use std::{collections::HashMap, env::args};
 
-use crate::vigenere::vi_cli;
-pub fn checker() {
+use crate::{help::help, vigenere::vi_cli};
+pub fn cli_system() {
     let mut command: Vec<String> = Vec::new();
     let mut option: Vec<String> = Vec::new();
     let mut value: HashMap<&str, String> = HashMap::new();
@@ -42,5 +42,7 @@ pub fn checker() {
             }
             _ => println!("command not found"),
         }
+    } else {
+        help();
     }
 }

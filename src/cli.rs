@@ -1,6 +1,9 @@
 use std::{collections::HashMap, env::args};
 
-use crate::{help::help, vigenere::vi_cli};
+use crate::{
+    help::{help, VERSION},
+    vigenere::vi_cli,
+};
 pub fn cli_system() {
     let mut command: Vec<String> = Vec::new();
     let mut option: Vec<String> = Vec::new();
@@ -28,7 +31,8 @@ pub fn cli_system() {
     if option.len() > 0 {
         match option.get(0) {
             Some(opt) => match opt.as_str() {
-                "-h" | "--help" => println!("help"),
+                "-h" | "--help" => help(),
+                "-v" | "--version" => println!("v{}", VERSION),
                 _ => (),
             },
             None => (),
@@ -42,7 +46,5 @@ pub fn cli_system() {
             }
             _ => println!("command not found"),
         }
-    } else {
-        help();
     }
 }

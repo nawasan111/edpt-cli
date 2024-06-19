@@ -1,5 +1,8 @@
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");
+
 pub fn help() {
-   println!(r#"
+    println!(
+        r#"
 EDPT - command line program to encript or decript message
 
 Usage:
@@ -20,5 +23,6 @@ Option:
 Example:
     edpt vi en -khello Helloworld
 
-"#); 
+"#
+    );
 }

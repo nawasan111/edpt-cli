@@ -9,7 +9,9 @@ Usage:
     edpt [mode] [action] <option> [inpu]
 
 Mode:
-    vi              Vigenere, encript or decript message with key
+    vi              Vigenere, encript or decript message with key.
+    co              Columnar Transposition, Switch column positions.
+                    this mode has no 'action'.
 
 Action:
     en              encript
@@ -21,6 +23,7 @@ Option:
 
 Example:
     edpt vi en -khello Helloworld
+    edpt co -khello Helloworld
 
 "#
     );

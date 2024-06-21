@@ -76,6 +76,6 @@ pub fn vi_cli(command: &Vec<String>, _: &Vec<String>, value: &HashMap<&str, Stri
             }
             println!("{}", result);
         }
-        _ => println!("Action not currect"),
+        _ => println!("Action not correct"),
     }
 }

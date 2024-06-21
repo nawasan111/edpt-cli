@@ -1,6 +1,7 @@
 use std::{collections::HashMap, env::args};
 
 use crate::{
+    columnar::co_cli,
     help::{help, VERSION},
     vigenere::vi_cli,
 };
@@ -43,6 +44,9 @@ pub fn cli_system() {
     }
     if let Some(cmd) = command.get(0) {
         match cmd.as_str() {
+            "co" => {
+                co_cli(&command, &option, &value);
+            }
             "vi" => {
                 vi_cli(&command, &option, &value);
             }
